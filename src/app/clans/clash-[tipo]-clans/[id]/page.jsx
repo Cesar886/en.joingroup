@@ -1,4 +1,4 @@
-// app/GroupDetailClanes.jsx
+// app/GroupDetailclans.jsx
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -33,7 +33,7 @@ import {
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.gosukbdahdvsade.site';
 
 
-export default function GroupDetailClanes() {
+export default function GroupDetailclans() {
   const { t, i18n } = useTranslation();
   const { id, tipo } = useParams();
   const [group, setGroup] = useState(null);
@@ -53,14 +53,14 @@ export default function GroupDetailClanes() {
         setNotFound(false);
 
         const q = query(
-          collection(db, 'clanes'),
+          collection(db, 'clans'),
           where('slug', '==', id),
           limit(1)
         );
         let snap = await getDocs(q);
 
         if (snap.empty) {
-          const allQ = query(collection(db, 'clanes'), limit(1000));
+          const allQ = query(collection(db, 'clans'), limit(1000));
           const allSnap = await getDocs(allQ);
           snap = allSnap.docs.filter(d => slugify(d.data().name) === id);
         } else {

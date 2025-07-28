@@ -12,7 +12,7 @@ async function callAPI(tag, type) {
   return res.json();
 }
 
-// ------------------- Clanes -------------------
+// ------------------- clans -------------------
 
 export const getClanInfo = (clanTag) => callAPI(clanTag, 'info');
 export const getClanMembers = (clanTag) => callAPI(clanTag, 'members');

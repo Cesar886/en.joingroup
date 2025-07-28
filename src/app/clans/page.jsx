@@ -28,7 +28,7 @@ import { collection, getDocs } from 'firebase/firestore';
 import { db } from '@/firebase/firebase';
 import { useMediaQuery } from '@mantine/hooks';
 import slugify from '@/lib/slugify';
-import styles from '@/app/styles/TableSortClanes.module.css';
+import styles from '@/app/styles/TableSortclans.module.css';
 import Head from 'next/head';
 
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
@@ -81,7 +81,7 @@ function sortData(data, { sortBy, reversed, search, collectionFilter }) {
 );
 }
 
-export default function Clanes() {
+export default function clans() {
   const { t, i18n } = useTranslation();
   const router = useRouter();
   const pathname = usePathname();
@@ -152,7 +152,7 @@ export default function Clanes() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const snapshot = await getDocs(collection(db, 'clanes'));
+      const snapshot = await getDocs(collection(db, 'clans'));
       const groups = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
 
@@ -224,7 +224,7 @@ export default function Clanes() {
         shadow="xs"
         mb="sm"
         key={`${row.id}-${slug}-${idx}`}
-        onClick={() => router.push(`/clanes/clanes-de-${row.tipo}/${slug}`)}
+        onClick={() => router.push(`/clans/clans-de-${row.tipo}/${slug}`)}
       >
         <Table horizontalSpacing="md" withRowBorders={false}>
           <Table.Tbody>
@@ -288,36 +288,36 @@ export default function Clanes() {
     <>
       <Head>
         {/* ——— TITLE ——— */}
-        <title>Clanes de Videojuegos Activos 2025: Únete o Publica tu Clan Gratis</title>
+        <title>clans de Videojuegos Activos 2025: Únete o Publica tu Clan Gratis</title>
 
         {/* ——— DESCRIPTION ——— */}
         <meta
           name="description"
-          content="Encuentra y únete a los mejores clanes de videojuegos activos en 2025. Publica tu clan gratis para reclutar miembros y conectar con comunidades de jugadores de Clash Royale y Clash of Clans."
+          content="Encuentra y únete a los mejores clans de videojuegos activos en 2025. Publica tu clan gratis para reclutar miembros y conectar con comunidades de jugadores de Clash Royale y Clash of Clans."
         />
 
         {/* ——— KEYWORDS (no tan importantes en Google, pero útiles para buscadores menores) ——— */}
         <meta
           name="keywords"
-          content="Clanes de Videojuegos, clanes activos, mejores clanes, unirse a clan, publicar clan, comunidades de jugadores, clanes gratis, Clash Royale, Clash of Clans, grupos de juegos, reclutar jugadores, clanes 2025"
+          content="clans de Videojuegos, clans activos, mejores clans, unirse a clan, publicar clan, comunidades de jugadores, clans gratis, Clash Royale, Clash of Clans, grupos de juegos, reclutar jugadores, clans 2025"
         />
 
         {/* ——— CANONICAL ——— */}
-        <link rel="canonical" href="https://joingroups.pro/clanes" />
+        <link rel="canonical" href="https://joingroups.pro/clans" />
 
         {/* ——— OPEN GRAPH ——— */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://joingroups.pro/clanes" />
-        <meta property="og:title" content="Clanes de Videojuegos Activos 2025: Únete o Publica tu Clan Gratis" />
-        <meta property="og:description" content="Encuentra y únete a los mejores clanes de videojuegos activos. Publica tu clan gratis para reclutar miembros y conectar con la comunidad gamer de Clash Royale y Clash of Clans." />
+        <meta property="og:url" content="https://joingroups.pro/clans" />
+        <meta property="og:title" content="clans de Videojuegos Activos 2025: Únete o Publica tu Clan Gratis" />
+        <meta property="og:description" content="Encuentra y únete a los mejores clans de videojuegos activos. Publica tu clan gratis para reclutar miembros y conectar con la comunidad gamer de Clash Royale y Clash of Clans." />
         <meta property="og:image" content="https://joingroups.pro/JoinGroups.ico" />
         <meta property="og:site_name" content="JoinGroups" />
 
         {/* ——— TWITTER CARDS ——— */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://joingroups.pro/clanes" />
-        <meta name="twitter:title" content="Clanes de Videojuegos Activos 2025: Únete o Publica tu Clan Gratis" />
-        <meta name="twitter:description" content="Encuentra y únete a los mejores clanes de videojuegos activos. Publica tu clan gratis para reclutar miembros y conectar con la comunidad gamer de Clash Royale y Clash of Clans." />
+        <meta name="twitter:url" content="https://joingroups.pro/clans" />
+        <meta name="twitter:title" content="clans de Videojuegos Activos 2025: Únete o Publica tu Clan Gratis" />
+        <meta name="twitter:description" content="Encuentra y únete a los mejores clans de videojuegos activos. Publica tu clan gratis para reclutar miembros y conectar con la comunidad gamer de Clash Royale y Clash of Clans." />
         <meta name="twitter:image" content="https://joingroups.pro/JoinGroups.ico" />
 
         {/* ——— SCHEMA.ORG ——— */}
@@ -326,21 +326,21 @@ export default function Clanes() {
           {
             "@context": "https://schema.org",
             "@type": "CollectionPage",
-            "name": "Clanes de Videojuegos Activos 2025",
-            "description": "Explora y únete a los clanes de videojuegos más activos en 2025. Publica tu clan gratis para reclutar jugadores y conectar con comunidades de Clash Royale y Clash of Clans.",
-            "url": "https://joingroups.pro/clanes",
+            "name": "clans de Videojuegos Activos 2025",
+            "description": "Explora y únete a los clans de videojuegos más activos en 2025. Publica tu clan gratis para reclutar jugadores y conectar con comunidades de Clash Royale y Clash of Clans.",
+            "url": "https://joingroups.pro/clans",
             "mainEntity": {
               "@type": "ItemList",
-              "name": "Clanes de Clash Royale y Clash of Clans",
+              "name": "clans de Clash Royale y Clash of Clans",
               "itemListElement": [
                 {
                   "@type": "ListItem",
                   "position": 1,
                   "item": {
                     "@type": "Thing",
-                    "name": "Clanes de Clash Royale",
-                    "url": "https://joingroups.pro/clanes/clanes-de-clash-royale",
-                    "description": "Encuentra clanes activos de Clash Royale para unirte o publicar el tuyo."
+                    "name": "clans de Clash Royale",
+                    "url": "https://joingroups.pro/clans/clans-de-clash-royale",
+                    "description": "Encuentra clans activos de Clash Royale para unirte o publicar el tuyo."
                   }
                 },
                 {
@@ -348,9 +348,9 @@ export default function Clanes() {
                   "position": 2,
                   "item": {
                     "@type": "Thing",
-                    "name": "Clanes de Clash of Clans",
-                    "url": "https://joingroups.pro/clanes/clanes-de-clash-of-clans",
-                    "description": "Descubre los mejores clanes de Clash of Clans para guerras y comunidad."
+                    "name": "clans de Clash of Clans",
+                    "url": "https://joingroups.pro/clans/clans-de-clash-of-clans",
+                    "description": "Descubre los mejores clans de Clash of Clans para guerras y comunidad."
                   }
                 }
               ]
@@ -378,7 +378,7 @@ export default function Clanes() {
                     variant="light"
                     size="xs"
                     radius="md"
-                    onClick={() => router.push('/clanes/clanes-de-clash-royale')}
+                    onClick={() => router.push('/clans/clans-de-clash-royale')}
                     leftSection={
                       <img
                         src="/clashRoyaleFondo1.png"
@@ -394,7 +394,7 @@ export default function Clanes() {
                     variant="light"
                     size="xs"
                     radius="md"
-                    onClick={() => router.push('/clanes/clanes-de-clash-of-clans')}
+                    onClick={() => router.push('/clans/clans-de-clash-of-clans')}
                     leftSection={
                       <img
                         src="/clashOfClansFondo.png"
@@ -433,7 +433,7 @@ export default function Clanes() {
                     </Title>
                     <Text size="sm" color="dimmed" mb="xs">
                       📱 {t('¿Tienes un clan de videojuego y quieres hacerlo crecer?')} <strong>{t('En JoinGroups puedes publicar tu clan gratis')}</strong> {t('y empezar a recibir nuevos miembros interesados.')}<br />
-                      🔍 {t('Explora una lista actualizada de')} <strong>{t('clanes de videojuegos')}</strong> {t('organizados por categoría e intereses.')}{' '}
+                      🔍 {t('Explora una lista actualizada de')} <strong>{t('clans de videojuegos')}</strong> {t('organizados por categoría e intereses.')}{' '}
                       🤝 {t('Únete a comunidades activas, comparte tu clan y conéctate con personas afines usando JoinGroups.')}
                     </Text>
                   </>
@@ -502,7 +502,7 @@ export default function Clanes() {
                 </Text>
 
                 <Text size="xs" color="dimmed" style={{ fontStyle: 'italic' }}>
-                  {t('Únete a miles de usuarios que ya están haciendo crecer sus clanes en JoinGroups.')}
+                  {t('Únete a miles de usuarios que ya están haciendo crecer sus clans en JoinGroups.')}
                 </Text>
                 </Paper>
               </>

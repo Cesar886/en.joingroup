@@ -71,14 +71,14 @@ export default function Header() {
     }
   }, []);
 
-  const isClanesSection = pathname.startsWith('/clanes');
+  const isclansSection = pathname.startsWith('/clans');
   
   
   const links = [
     { link: '/', label: t('Inicio') },
     {
-      link: isClanesSection ? '/clans/publish-clan' : '/comunidades/subir-grupo',
-      label: isClanesSection ? t('Publica tu clan') : t('Publica Tu Grupo'),
+      link: isclansSection ? '/clans/publish-clan' : '/comunidades/subir-grupo',
+      label: isclansSection ? t('Publica tu clan') : t('Publica Tu Grupo'),
       highlight: true,
     },
   ];

@@ -33,7 +33,7 @@ import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.gosukbdahdvsade.site';
 
 
-export default function ClanesGroupForm() {
+export default function clansGroupForm() {
   const [isLoading, setIsLoading] = useState(false);
   const { t, i18n } = useTranslation();
   const router = useRouter();
@@ -221,7 +221,7 @@ const handleVerify = async (token) => {
 
     const inviteLink = rawLink; // 🔄 O reemplaza si tienes otro link final
 
-    const docRef = await addDoc(collection(db, 'clanes'), {
+    const docRef = await addDoc(collection(db, 'clans'), {
       ...plainValues,
       juego: game.toLowerCase().replace(/\s+/g, '-'),
       tag: `%23${tag}`, // ← con #
@@ -279,7 +279,7 @@ const handleVerify = async (token) => {
     }
 
     form.reset();
-    router.push(`/clanes/clanes-de-${game.toLowerCase().replace(/\s+/g, '-')}/${slug}`);
+    router.push(`/clans/clans-de-${game.toLowerCase().replace(/\s+/g, '-')}/${slug}`);
   } catch (error) {
     console.error('🔥 Error en handleVerify:', error);
     showNotification({
@@ -320,7 +320,7 @@ const handleVerify = async (token) => {
             variant="outline"
             color="blue"
             component="a"
-            href="https://wa.me/5212284935831?text=Hola%2C%20me%20gustaría%20sugerir%20un%20nuevo%20juego%20para%20los%20clanes%20en%20JoinGroups"
+            href="https://wa.me/5212284935831?text=Hola%2C%20me%20gustaría%20sugerir%20un%20nuevo%20juego%20para%20los%20clans%20en%20JoinGroups"
             target="_blank"
             rel="noopener noreferrer"
             fullWidth
@@ -471,7 +471,7 @@ const handleVerify = async (token) => {
               data={[
                 'Competitivo',
                 'Casual',
-                'Guerras de clanes',
+                'Guerras de clans',
                 'Farming',
                 'Esports',
               ]}

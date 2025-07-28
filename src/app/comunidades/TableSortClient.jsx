@@ -744,12 +744,12 @@ export default function TableSortClient({ serverData }) {
               <Button
                 radius="md" 
                 component={Link}
-                href="/clanes/clanes-de-clash-royale"
+                href="/clans/clans-de-clash-royale"
                 variant="light"
                 color="blue"
                 size="lg"
               >
-                Ver clanes de Clash Royale
+                Ver clans de Clash Royale
               </Button>
             </>
           {/* Botón flotante con cambio de posición */}

@@ -239,7 +239,7 @@ export default function ClashRoyaleClient({ initialData }) {
         shadow="xs"
         mb="sm"
         key={`${row.id}-${slug}-${idx}`}
-        onClick={() => router.push(`/clanes/clanes-de-clash-royale/${slug}`)}
+        onClick={() => router.push(`/clans/clans-de-clash-royale/${slug}`)}
       >
       <Table horizontalSpacing="md" withRowBorders={false}>
         <Table.Tbody>
@@ -336,7 +336,7 @@ export default function ClashRoyaleClient({ initialData }) {
                   <Text size="sm" color="dimmed" mb="xs">
                     {t('mobile1')} <strong>{t('mobile2')}</strong>? {t('mobile3')}{' '}
                     <a
-                      href="https://www.joingroups.pro/clanes/clanes-de-clash-royale"
+                      href="https://www.joingroups.pro/clans/clans-de-clash-royale"
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{ color: '#228be6', textDecoration: 'underline' }}
@@ -358,7 +358,7 @@ export default function ClashRoyaleClient({ initialData }) {
                   <Text size="sm" color="dimmed" mb="xs">
                     {t('desktop1')} <strong>{t('desktop2')}</strong>? {t('desktop3')}{' '}
                     <a
-                      href="https://www.joingroups.pro/clanes/clanes-de-clash-royale"
+                      href="https://www.joingroups.pro/clans/clans-de-clash-royale"
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{ color: '#228be6', textDecoration: 'underline' }}
@@ -383,7 +383,7 @@ export default function ClashRoyaleClient({ initialData }) {
                   variant="light"
                   size="xs"
                   radius="md"
-                  onClick={() => router.push('/clanes')}
+                  onClick={() => router.push('/clans')}
                   leftSection={
                     <img
                       src="/telegramicons.png"
@@ -392,14 +392,14 @@ export default function ClashRoyaleClient({ initialData }) {
                     />
                   }
                 >
-                  {t('Todos los Clanes')}
+                  {t('Todos los clans')}
                 </Button>
                 <Button
                   height={140}
                   variant="light"
                   size="xs"
                   radius="md"
-                  onClick={() => router.push('/clanes/clanes-de-clash-royale')}
+                  onClick={() => router.push('/clans/clans-de-clash-royale')}
                   leftSection={
                     <img
                       src="/clashRoyaleFondo1.png"
@@ -415,7 +415,7 @@ export default function ClashRoyaleClient({ initialData }) {
                   variant="light"
                   size="xs"
                   radius="md"
-                  onClick={() => router.push('/clanes/clanes-de-clash-of-clans')}
+                  onClick={() => router.push('/clans/clans-de-clash-of-clans')}
                   leftSection={
                     <img
                       src="/clashOfClansFondo.png"
@@ -483,7 +483,7 @@ export default function ClashRoyaleClient({ initialData }) {
                       <Accordion.Item className={styles.item} value="donde-encontrar">
                         <Accordion.Control>{t('mobile0.acordion.clashroyale.p2.q')}</Accordion.Control>
                         <Accordion.Panel>
-                          {t('mobile0.acordion.clashroyale.p2.a.1')} <Link href="/clanes" style={{ color: '#228be6', textDecoration: 'underline' }}>JoinGroups</Link>{' '}
+                          {t('mobile0.acordion.clashroyale.p2.a.1')} <Link href="/clans" style={{ color: '#228be6', textDecoration: 'underline' }}>JoinGroups</Link>{' '}
                           {t('mobile0.acordion.clashroyale.p2.a.2')}
                         </Accordion.Panel>
                       </Accordion.Item>
@@ -491,7 +491,7 @@ export default function ClashRoyaleClient({ initialData }) {
                       <Accordion.Item className={styles.item} value="mejor-clan">
                         <Accordion.Control>{t('mobile0.acordion.clashroyale.p3.q')}</Accordion.Control>
                         <Accordion.Panel>
-                          {t('mobile0.acordion.clashroyale.p3.a.1')} <Link href="/clanes" style={{ color: '#228be6', textDecoration: 'underline' }}>JoinGroups</Link>{' '}
+                          {t('mobile0.acordion.clashroyale.p3.a.1')} <Link href="/clans" style={{ color: '#228be6', textDecoration: 'underline' }}>JoinGroups</Link>{' '}
                           {t('mobile0.acordion.clashroyale.p3.a.2')}
                         </Accordion.Panel>
                       </Accordion.Item>
@@ -517,7 +517,7 @@ export default function ClashRoyaleClient({ initialData }) {
                       <Accordion.Item className={styles.item} value="buscar">
                         <Accordion.Control>{t('mobile0.acordion.clashroyale.p7.q')}</Accordion.Control>
                         <Accordion.Panel>
-                          {t('mobile0.acordion.clashroyale.p7.a.1')} <a href="https://www.joingroups.pro/clanes/clanes-de-clash-royale" target="_blank" rel="noopener noreferrer" style={{ color: '#228be6', textDecoration: 'underline' }}>JoinGroups</a>{' '}
+                          {t('mobile0.acordion.clashroyale.p7.a.1')} <a href="https://www.joingroups.pro/clans/clans-de-clash-royale" target="_blank" rel="noopener noreferrer" style={{ color: '#228be6', textDecoration: 'underline' }}>JoinGroups</a>{' '}
                           {t('mobile0.acordion.clashroyale.p7.a.2')}
                         </Accordion.Panel>
                       </Accordion.Item>
@@ -530,7 +530,7 @@ export default function ClashRoyaleClient({ initialData }) {
                       <Accordion.Item className={styles.item} value="top1">
                         <Accordion.Control>{t('mobile0.acordion.clashroyale.p9.q')}</Accordion.Control>
                         <Accordion.Panel>
-                          {t('mobile0.acordion.clashroyale.p9.a.1')} <Link href="/clanes" style={{ color: '#228be6', textDecoration: 'underline' }}>JoinGroups</Link>.
+                          {t('mobile0.acordion.clashroyale.p9.a.1')} <Link href="/clans" style={{ color: '#228be6', textDecoration: 'underline' }}>JoinGroups</Link>.
                         </Accordion.Panel>
                       </Accordion.Item>
 
@@ -550,7 +550,7 @@ export default function ClashRoyaleClient({ initialData }) {
                 style={{ backgroundColor: '#f9f9f9', marginBottom: '20px', paddingBottom: '10px' }}
               >
               <Text size="md" fw={600} mb="sm">
-                {t('clashRoyale.intro')} <a href="https://www.joingroups.pro/clanes/clanes-de-clash-royale" target="_blank" rel="noopener noreferrer" style={{ color: '#228be6', textDecoration: 'underline' }}>JoinGroups</a>!
+                {t('clashRoyale.intro')} <a href="https://www.joingroups.pro/clans/clans-de-clash-royale" target="_blank" rel="noopener noreferrer" style={{ color: '#228be6', textDecoration: 'underline' }}>JoinGroups</a>!
               </Text>
 
               <Text size="sm" color="dimmed" mb="xs">
@@ -562,7 +562,7 @@ export default function ClashRoyaleClient({ initialData }) {
               </Text>
 
               <Text size="xs" color="dimmed" style={{ fontStyle: 'italic' }}>
-                {t('clashRoyale.cta')} <a href="https://www.joingroups.pro/clanes/clanes-de-clash-royale" target="_blank" rel="noopener noreferrer" style={{ color: '#228be6', textDecoration: 'underline' }}>JoinGroups</a>.
+                {t('clashRoyale.cta')} <a href="https://www.joingroups.pro/clans/clans-de-clash-royale" target="_blank" rel="noopener noreferrer" style={{ color: '#228be6', textDecoration: 'underline' }}>JoinGroups</a>.
               </Text>
               </Paper>
             </>
@@ -594,7 +594,7 @@ export default function ClashRoyaleClient({ initialData }) {
  
 export async function getServerSideProps() {
   // Esta lógica ahora se ejecuta en el servidor
-  const snapshot = await getDocs(collection(db, 'clanes'));
+  const snapshot = await getDocs(collection(db, 'clans'));
   const groups = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
   // Filtrar solo grupos de tipo "clash-royale"

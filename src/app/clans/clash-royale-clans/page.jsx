@@ -1,4 +1,4 @@
-// ✅ Archivo: /app/clanes/clanes-de-clash-royale/page.jsx
+// ✅ Archivo: /app/clans/clans-de-clash-royale/page.jsx
 
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '@/firebase/firebase';
@@ -14,7 +14,7 @@ export const metadata = {
     canonical: 'https://en.joingroups.pro/clans/clash-royale-clans',
     languages: {
       'en-US': 'https://en.joingroups.pro/clans/clash-royale-clans',
-      'es': 'https://joingroups.pro/clanes/clanes-de-clash-royale',
+      'es': 'https://joingroups.pro/clans/clans-de-clash-royale',
       'x-default': 'https://en.joingroups.pro/clans/clash-royale-clans',
     },
   },
@@ -43,7 +43,7 @@ export const metadata = {
 
 
 export default async function ClashRoyalePage() {
-  const snapshot = await getDocs(collection(db, 'clanes'));
+  const snapshot = await getDocs(collection(db, 'clans'));
   const groups = snapshot.docs.map(doc => {
     const data = doc.data();
     return {

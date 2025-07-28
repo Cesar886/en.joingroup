@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin']
 
 export const metadata = {
   title: 'JoinGroups Pro',
-  description: 'Grupos y clanes en Telegram y más',
+  description: 'Grupos y clans en Telegram y más',
 };
 
 export default function RootLayout({ children }) {

@@ -104,7 +104,7 @@ const router = useRouter();
 
   useEffect(() => {
     const fetchData = async () => {
-      const snapshot = await getDocs(collection(db, 'clanes'));
+      const snapshot = await getDocs(collection(db, 'clans'));
       const groups = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
       // Filtrar solo grupos de tipo "clashroyale"
@@ -167,7 +167,7 @@ const router = useRouter();
         shadow="xs"
         mb="sm"
         key={`${row.id}-${slug}-${idx}`}
-        onClick={() => router.push(`/clanes/clanes-de-clash-of-clans/${slug}`)}
+        onClick={() => router.push(`/clans/clans-de-clash-of-clans/${slug}`)}
       >
         <Table horizontalSpacing="md" withRowBorders={false}>
           <Table.Tbody>
@@ -231,28 +231,28 @@ const router = useRouter();
     <>
       <Head>
         {/* --- ETIQUETAS FUNDAMENTALES --- */}
-        <title>Clanes de Clash of Clans Activos [2025] | Únete o Publica tu clan</title>
-        <meta name="description" content="Encuentra los mejores clanes de Clash of Clans activos en 2025. Busca por nivel y únete, o publica tu clan GRATIS para reclutar nuevos miembros y dominar las guerras." />
-        <link rel="canonical" href="https://joingroups.pro/clanes/clanes-de-clash-of-clans" />
+        <title>clans de Clash of Clans Activos [2025] | Únete o Publica tu clan</title>
+        <meta name="description" content="Encuentra los mejores clans de Clash of Clans activos en 2025. Busca por nivel y únete, o publica tu clan GRATIS para reclutar nuevos miembros y dominar las guerras." />
+        <link rel="canonical" href="https://joingroups.pro/clans/clans-de-clash-of-clans" />
 
         {/* --- ETIQUETAS PARA REDES SOCIALES (OPEN GRAPH ) --- */}
-        <meta property="og:title" content="Clanes de Clash of Clans | Únete o Publica tu Clan Gratis" />
-        <meta property="og:description" content="La mejor lista de clanes de CoC para unirte. Filtra por tu nivel y encuentra tu comunidad ideal. ¿Eres líder? Publica tu clan y recluta jugadores hoy." />
+        <meta property="og:title" content="clans de Clash of Clans | Únete o Publica tu Clan Gratis" />
+        <meta property="og:description" content="La mejor lista de clans de CoC para unirte. Filtra por tu nivel y encuentra tu comunidad ideal. ¿Eres líder? Publica tu clan y recluta jugadores hoy." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://joingroups.pro/clanes/clanes-de-clash-of-clans" />
+        <meta property="og:url" content="https://joingroups.pro/clans/clans-de-clash-of-clans" />
         <meta property="og:image" content="https://joingroups.pro/clashOfClansFondo.png" />
         <meta property="og:image:alt" content="Héroes de Clash of Clans frente a una aldea" />
         <meta property="og:site_name" content="JoinGroups.pro" />
 
         {/* --- ETIQUETAS PARA TWITTER --- */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Clanes de Clash of Clans Activos [2025] | Únete o Recluta Miembros" />
-        <meta name="twitter:description" content="La mejor lista de clanes de CoC para unirte. Filtra por tu nivel y encuentra tu comunidad ideal. ¿Eres líder? Publica tu clan y recluta jugadores hoy." />
+        <meta name="twitter:title" content="clans de Clash of Clans Activos [2025] | Únete o Recluta Miembros" />
+        <meta name="twitter:description" content="La mejor lista de clans de CoC para unirte. Filtra por tu nivel y encuentra tu comunidad ideal. ¿Eres líder? Publica tu clan y recluta jugadores hoy." />
         <meta name="twitter:image" content="https://joingroups.pro/clashOfClansFondo.png" />
         <meta name="twitter:image:alt" content="Héroes de Clash of Clans frente a una aldea" />
 
         {/* --- ETIQUETAS ADICIONALES --- */}
-        <meta name="keywords" content="clanes clash of clans, clanes activos, reclutar miembros coc, unirse a clan, buscar clan clash of clans, publicar clan gratis, guerra de clanes, clanes coc español" />
+        <meta name="keywords" content="clans clash of clans, clans activos, reclutar miembros coc, unirse a clan, buscar clan clash of clans, publicar clan gratis, guerra de clans, clans coc español" />
         <meta name="robots" content="index, follow" />
       </Head>
 
@@ -275,7 +275,7 @@ const router = useRouter();
                   variant="light"
                   size="xs"
                   radius="md"
-                  onClick={() => router.push('/clanes')}
+                  onClick={() => router.push('/clans')}
                   leftSection={
                     <img
                       src="/telegramicons.png"
@@ -284,14 +284,14 @@ const router = useRouter();
                     />
                   }
                 >
-                  {t('Todos los Clanes')}
+                  {t('Todos los clans')}
                 </Button>
                 <Button
                   height={140}
                   variant="light"
                   size="xs"
                   radius="md"
-                  onClick={() => router.push('/clanes/clanes-de-clash-royale')}
+                  onClick={() => router.push('/clans/clans-de-clash-royale')}
                   leftSection={
                     <img
                       src="/clashRoyaleFondo1.png"
@@ -307,7 +307,7 @@ const router = useRouter();
                   variant="light"
                   size="xs"
                   radius="md"
-                  onClick={() => router.push('/clanes/clanes-de-clash-of-clans')}
+                  onClick={() => router.push('/clans/clans-de-clash-of-clans')}
                   leftSection={
                     <img
                       src="/clashOfClansFondo.png"
@@ -345,7 +345,7 @@ const router = useRouter();
                   </Title>
                   <Text size="sm" color="dimmed" mb="xs">
                     📱 {t('¿Tienes un clan de Clash of Clans y quieres hacerlo crecer?')} <strong>{t('En JoinGroups puedes publicar tu clan gratis')}</strong> {t('y empezar a recibir nuevos miembros interesados.')}<br />
-                    🔍 {t('Explora una lista actualizada de')} <strong>{t('clanes de Clash of Clans')}</strong> {t('organizados por categoría e intereses.')}{' '}
+                    🔍 {t('Explora una lista actualizada de')} <strong>{t('clans de Clash of Clans')}</strong> {t('organizados por categoría e intereses.')}{' '}
                     🤝 {t('Únete a comunidades activas, comparte tu clan y conéctate con personas afines usando JoinGroups.')}
                   </Text>
                 </>

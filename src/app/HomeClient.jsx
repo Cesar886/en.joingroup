@@ -123,8 +123,8 @@ const featuredButtons = [
     icon: <IconTrendingUp size={18} />, color: 'orange',
   },
   {
-    to: '/clanes/clanes-de-clash-royale',
-    label: 'Clanes de Clash Royale',
+    to: '/clans/clans-de-clash-royale',
+    label: 'clans de Clash Royale',
     icon: <IconCrown size={18} />, color: 'pink',
   },
   {
@@ -138,8 +138,8 @@ const featuredButtons = [
     icon: <IconNews size={18} />, color: 'cyan',
   },
   {
-    to: '/clanes/clanes-de-clash-of-clans',
-    label: 'Clanes Clash of Clans',
+    to: '/clans/clans-de-clash-of-clans',
+    label: 'clans Clash of Clans',
     icon: <IconStar size={18} />, color: 'pink',
   },
 ];
@@ -148,7 +148,7 @@ export default function HomeClient({ serverData }) {
   const { t, i18n } = useTranslation();
   const router = useRouter();
   const [groups, setGroups] = useState([]);
-  const [clanes, setClanes] = useState([]);
+  const [clans, setclans] = useState([]);
   const [subdomain, setSubdomain] = useState('mx'); // valor por defecto
   const baseLang = typeof i18n.language === 'string' ? i18n.language.split('-')[0] : 'es';
   const isMobile = useMediaQuery('(max-width: 768px)');
@@ -210,21 +210,21 @@ export default function HomeClient({ serverData }) {
       const whatsappGroups = [...destacadosWhatsapp, ...nuevosWhatsapp].slice(0, 5);
       setGroupsWhatsapp(whatsappGroups);
 
-      // ---------- CLANES ----------
-      const clanesSnapshot = await getDocs(collection(db, 'clanes'));
-      const allClanes = clanesSnapshot.docs.map(doc => ({
+      // ---------- clans ----------
+      const clansSnapshot = await getDocs(collection(db, 'clans'));
+      const allclans = clansSnapshot.docs.map(doc => ({
         id: doc.id,
         ...doc.data(),
       }));
 
-      const destacadosClanes = allClanes.filter(c => c.destacado === true);
-      const nuevosClanes = allClanes
+      const destacadosclans = allclans.filter(c => c.destacado === true);
+      const nuevosclans = allclans
         .filter(c => c.createdAt)
         .sort((a, b) => b.createdAt.toMillis() - a.createdAt.toMillis())
-        .filter(c => !destacadosClanes.some(d => d.id === c.id))
-        .slice(0, 4 - destacadosClanes.length);
+        .filter(c => !destacadosclans.some(d => d.id === c.id))
+        .slice(0, 4 - destacadosclans.length);
 
-      setClanes([...destacadosClanes, ...nuevosClanes]);
+      setclans([...destacadosclans, ...nuevosclans]);
     };
 
     fetchData();
@@ -270,7 +270,7 @@ export default function HomeClient({ serverData }) {
           const categoria = row.categories?.[0] || 'otros';
           const basePath = isGroup
             ? `/comunidades/grupos-de-${row.tipo}/${slugify(categoria)}`
-            : `/clanes/clanes-de-${row.tipo}`;
+            : `/clans/clans-de-${row.tipo}`;
           router.push(`${basePath}/${slug}`);
         }}
         style={{ cursor: 'pointer' }}
@@ -347,7 +347,7 @@ export default function HomeClient({ serverData }) {
           >
             {isMobile
               ? 'Grupos de Telegram, WhatsApp y Juegos'
-              : 'Los mejores Grupos de Telegram, WhatsApp y Clanes de Juegos Activos'}
+              : 'Los mejores Grupos de Telegram, WhatsApp y clans de Juegos Activos'}
           </Title>
 
 
@@ -448,13 +448,13 @@ export default function HomeClient({ serverData }) {
 
 
         <Paper mt="xl" withBorder shadow="sm" p="md" radius="lg">
-          <Title order={2} mb="sm" fz={isMobile ? 20 : 26}>{isMobile ? '🏆 Clanes destacados' : '🏆 Clanes destacados y con más vistas'}</Title>
+          <Title order={2} mb="sm" fz={isMobile ? 20 : 26}>{isMobile ? '🏆 clans destacados' : '🏆 clans destacados y con más vistas'}</Title>
           <Stack>
-            {clanes.map((clan, i) => renderCard(clan, i, false))}
+            {clans.map((clan, i) => renderCard(clan, i, false))}
           </Stack>
           <Center mt="md">
-            <Button variant="light" component={Link} radius="md" href="/clanes" color='violet'>
-              Ver todos los clanes
+            <Button variant="light" component={Link} radius="md" href="/clans" color='violet'>
+              Ver todos los clans
             </Button>
           </Center>
         </Paper>
@@ -567,12 +567,12 @@ export default function HomeClient({ serverData }) {
         <Button
           radius="md" 
           component={Link}
-          href="/clanes/clanes-de-clash-royale"
+          href="/clans/clans-de-clash-royale"
           variant="light"
           color="blue"
           size="lg"
         >
-           Ver clanes de Clash Royale
+           Ver clans de Clash Royale
         </Button>
 
         <Button
