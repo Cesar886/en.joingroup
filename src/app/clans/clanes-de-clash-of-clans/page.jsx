@@ -104,7 +104,7 @@ const router = useRouter();
 
   useEffect(() => {
     const fetchData = async () => {
-      const snapshot = await getDocs(collection(db, 'clans'));
+      const snapshot = await getDocs(collection(db, 'clanes'));
       const groups = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
       // Filtrar solo grupos de tipo "clashroyale"

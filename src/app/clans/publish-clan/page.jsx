@@ -221,7 +221,7 @@ const handleVerify = async (token) => {
 
     const inviteLink = rawLink; // 🔄 O reemplaza si tienes otro link final
 
-    const docRef = await addDoc(collection(db, 'clans'), {
+    const docRef = await addDoc(collection(db, 'clanes'), {
       ...plainValues,
       juego: game.toLowerCase().replace(/\s+/g, '-'),
       tag: `%23${tag}`, // ← con #

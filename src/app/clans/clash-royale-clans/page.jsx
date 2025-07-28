@@ -43,7 +43,7 @@ export const metadata = {
 
 
 export default async function ClashRoyalePage() {
-  const snapshot = await getDocs(collection(db, 'clans'));
+  const snapshot = await getDocs(collection(db, 'clanes'));
   const groups = snapshot.docs.map(doc => {
     const data = doc.data();
     return {

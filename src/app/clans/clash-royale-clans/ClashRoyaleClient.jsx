@@ -399,7 +399,7 @@ export default function ClashRoyaleClient({ initialData }) {
                   variant="light"
                   size="xs"
                   radius="md"
-                  onClick={() => router.push('/clans/clans-de-clash-royale')}
+                  onClick={() => router.push('/clans/clash-royale-clans')}
                   leftSection={
                     <img
                       src="/clashRoyaleFondo1.png"
@@ -415,7 +415,7 @@ export default function ClashRoyaleClient({ initialData }) {
                   variant="light"
                   size="xs"
                   radius="md"
-                  onClick={() => router.push('/clans/clans-de-clash-of-clans')}
+                  onClick={() => router.push('/clans/clash-of-clans-clans')}
                   leftSection={
                     <img
                       src="/clashOfClansFondo.png"
@@ -594,7 +594,7 @@ export default function ClashRoyaleClient({ initialData }) {
  
 export async function getServerSideProps() {
   // Esta lógica ahora se ejecuta en el servidor
-  const snapshot = await getDocs(collection(db, 'clans'));
+  const snapshot = await getDocs(collection(db, 'clanes'));
   const groups = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
   // Filtrar solo grupos de tipo "clash-royale"
