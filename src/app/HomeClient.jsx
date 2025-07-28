@@ -460,7 +460,7 @@ export default function HomeClient({ serverData }) {
         </Paper>
 
         <Center mt="xl">
-          <Button component={Link} href="/clanes/publicar-clan" variant='light' color="violet" size="lg" radius='lg'>
+          <Button component={Link} href="/clans/publish-clan" variant='light' color="violet" size="lg" radius='lg'>
             Publica tu CLAN ahora
           </Button>
         </Center>

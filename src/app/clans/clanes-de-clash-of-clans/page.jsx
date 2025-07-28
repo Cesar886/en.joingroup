@@ -357,7 +357,7 @@ const router = useRouter();
                   variant="outline"
                   size="xs"
                   radius="md"
-                  onClick={() => router.push('/clanes/publicar-clan')}
+                  onClick={() => router.push('/clans/publish-clan')}
                   leftSection={
                     <img
                     src="/telegramicons.png"
@@ -422,7 +422,7 @@ const router = useRouter();
               </Text>
 
               <Text size="sm" color="dimmed" mb="xs">
-                {t('Publica tu CLAN gratuitamente en')} <Link href="/clanes/publicar-clan" style={{ color: '#228be6', textDecoration: 'underline' }}>JoinGroups</Link> {t('y conecta con una comunidad activa que comparte tus intereses.')}
+                {t('Publica tu CLAN gratuitamente en')} <Link href="/clans/publish-clan" style={{ color: '#228be6', textDecoration: 'underline' }}>JoinGroups</Link> {t('y conecta con una comunidad activa que comparte tus intereses.')}
                 {t('Si aún no sabes cómo crear un clan, puedes aprender fácilmente')} {' '}
                 <Link href="/instrucciones-crear-clan" style={{ color: '#228be6', textDecoration: 'underline' }}>
                   {t('aquí cómo crear tu clan de Clash of Clans')}

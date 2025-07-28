@@ -514,7 +514,7 @@ export default function Clanes() {
           {/* Botón flotante con cambio de posición */}
           <Button
             component={Link}
-            href="/clanes/publicar-clan"
+            href="/clans/publish-clan"
             color="red"
             size="sm"
             variant='filled'

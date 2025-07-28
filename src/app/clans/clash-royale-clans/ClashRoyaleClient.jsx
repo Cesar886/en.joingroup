@@ -499,7 +499,7 @@ export default function ClashRoyaleClient({ initialData }) {
                       <Accordion.Item className={styles.item} value="publicar">
                         <Accordion.Control>{t('mobile0.acordion.clashroyale.p4.q')}</Accordion.Control>
                         <Accordion.Panel>
-                          {t('mobile0.acordion.clashroyale.p4.a.1')} <Link href="/clanes/publicar-clan" style={{ color: '#228be6', textDecoration: 'underline' }}>JoinGroups</Link>{' '}
+                          {t('mobile0.acordion.clashroyale.p4.a.1')} <Link href="/clans/publish-clan" style={{ color: '#228be6', textDecoration: 'underline' }}>JoinGroups</Link>{' '}
                           {t('mobile0.acordion.clashroyale.p4.a.2')}
                         </Accordion.Panel>
                       </Accordion.Item>
@@ -555,7 +555,7 @@ export default function ClashRoyaleClient({ initialData }) {
 
               <Text size="sm" color="dimmed" mb="xs">
                 {t('clashRoyale.faq1')} <br />
-                {t('clashRoyale.faq2')} <Link href="/clanes/publicar-clan" style={{ color: '#228be6', textDecoration: 'underline' }}>{t('clashRoyale.linkSearch')}</Link> <br />
+                {t('clashRoyale.faq2')} <Link href="/clans/publish-clan" style={{ color: '#228be6', textDecoration: 'underline' }}>{t('clashRoyale.linkSearch')}</Link> <br />
                 {t('clashRoyale.faq3')} <br />
                 {t('clashRoyale.faq4')} <br />
                 {t('clashRoyale.faq5')} <Link href="/instrucciones-crear-grupo-telegram" style={{ color: '#228be6', textDecoration: 'underline' }}>{t('clashRoyale.linkCreate')}</Link>.
@@ -573,7 +573,7 @@ export default function ClashRoyaleClient({ initialData }) {
           )}
           <Button
             component={Link}
-            href="/clanes/publicar-clan"
+            href="/clans/publish-clan"
             color="red"
             size="sm"
             variant='filled'

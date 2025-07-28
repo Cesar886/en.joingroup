@@ -306,7 +306,7 @@ const handleVerify = async (token) => {
         />
         <link
           rel="canonical"
-          href="https://joingroups.pro/clanes/publicar-clan"
+          href="https://joingroups.pro/clans/publish-clan"
         />
       </Head>
 
