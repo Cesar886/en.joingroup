@@ -37,8 +37,8 @@ import '@/locales/i18n'; // Importa tus archivos de traducción
 
 
 const countries = [
-  { value: 'mx', label: 'México', emoji: '🇲🇽', lang: 'es' },
-  { value: 'us', label: 'Estados Unidos', emoji: '🇺🇸', lang: 'en' },
+  { value: 'es', label: 'México', emoji: '🇲🇽', lang: 'es' },
+  { value: 'en', label: 'Estados Unidos', emoji: '🇺🇸', lang: 'en' },
   { value: 'ar', label: 'Argentina', emoji: '🇦🇷', lang: 'es' },
   { value: 'co', label: 'Colombia', emoji: '🇨🇴', lang: 'es' },
   { value: 'es', label: 'España', emoji: '🇪🇸', lang: 'es' },
@@ -149,7 +149,7 @@ export default function HomeClient({ serverData }) {
   const router = useRouter();
   const [groups, setGroups] = useState([]);
   const [clans, setclans] = useState([]);
-  const [subdomain, setSubdomain] = useState('mx'); // valor por defecto
+  const [subdomain, setSubdomain] = useState('es'); // valor por defecto
   const baseLang = typeof i18n.language === 'string' ? i18n.language.split('-')[0] : 'es';
   const isMobile = useMediaQuery('(max-width: 768px)');
   const [buttonPosition, setButtonPosition] = useState('top-left');
@@ -161,7 +161,7 @@ export default function HomeClient({ serverData }) {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const host = window.location.hostname;
-      const sd = host.includes('.') ? host.split('.')[0] : 'mx';
+      const sd = host.includes('.') ? host.split('.')[0] : 'es';
       setSubdomain(sd);
     }
   }, []);

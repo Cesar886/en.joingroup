@@ -34,8 +34,8 @@ export default function Form() {
   const [redSocial, setRedSocial] = useState('Telegram');``
   
   const cities = [
-    { value: 'mx', label: 'México' },
-    { value: 'us', label: 'Estados Unidos' },
+    { value: 'es', label: 'México' },
+    { value: 'en', label: 'Estados Unidos' },
     { value: 'ar', label: 'Argentina' },
     { value: 'co', label: 'Colombia' },
     { value: 'es', label: 'España' },

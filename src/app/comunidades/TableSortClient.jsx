@@ -75,8 +75,8 @@ const countryMap = {
 };
 
 const countries = [
-  { value: 'mx', label: 'México', emoji: '🇲🇽', lang: 'es' },
-  { value: 'us', label: 'Estados Unidos', emoji: '🇺🇸', lang: 'en' },
+  { value: 'es', label: 'México', emoji: '🇲🇽', lang: 'es' },
+  { value: 'en', label: 'Estados Unidos', emoji: '🇺🇸', lang: 'en' },
   { value: 'ar', label: 'Argentina', emoji: '🇦🇷', lang: 'es' },
   { value: 'co', label: 'Colombia', emoji: '🇨🇴', lang: 'es' },
   { value: 'es', label: 'España', emoji: '🇪🇸', lang: 'es' },
@@ -154,7 +154,7 @@ export default function TableSortClient({ serverData }) {
   }, []);
   const subdomain = hostname.includes('.') && hostname.split('.')[0] !== 'www'
     ? hostname.split('.')[0]
-    : 'mx';
+    : 'es';
 
   
   const [buttonPosition, setButtonPosition] = useState('top-left');
