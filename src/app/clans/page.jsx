@@ -81,7 +81,7 @@ function sortData(data, { sortBy, reversed, search, collectionFilter }) {
 );
 }
 
-export default function clans() {
+export default function Clanes() {
   const { t, i18n } = useTranslation();
   const router = useRouter();
   const pathname = usePathname();

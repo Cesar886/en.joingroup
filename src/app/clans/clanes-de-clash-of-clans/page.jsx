@@ -167,7 +167,7 @@ const router = useRouter();
         shadow="xs"
         mb="sm"
         key={`${row.id}-${slug}-${idx}`}
-        onClick={() => router.push(`/clans/clans-de-clash-of-clans/${slug}`)}
+        onClick={() => router.push(`/clans/clashof-clans-clans/${slug}`)}
       >
         <Table horizontalSpacing="md" withRowBorders={false}>
           <Table.Tbody>
@@ -291,7 +291,7 @@ const router = useRouter();
                   variant="light"
                   size="xs"
                   radius="md"
-                  onClick={() => router.push('/clans/clans-de-clash-royale')}
+                  onClick={() => router.push('/clans/clash-royale-clans')}
                   leftSection={
                     <img
                       src="/clashRoyaleFondo1.png"
@@ -307,7 +307,7 @@ const router = useRouter();
                   variant="light"
                   size="xs"
                   radius="md"
-                  onClick={() => router.push('/clans/clans-de-clash-of-clans')}
+                  onClick={() => router.push('/clans/clash-of-clans-clans')}
                   leftSection={
                     <img
                       src="/clashOfClansFondo.png"

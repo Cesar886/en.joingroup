@@ -39,7 +39,7 @@ export default function Header() {
     }
   }, []);
 
-  const isclansSection = pathname.startsWith('/clans');
+  const isclansSection = pathname.startsWith('/clanes');
   
   
   const links = [

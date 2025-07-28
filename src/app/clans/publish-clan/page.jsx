@@ -279,7 +279,7 @@ const handleVerify = async (token) => {
     }
 
     form.reset();
-    router.push(`/clans/clans-de-${game.toLowerCase().replace(/\s+/g, '-')}/${slug}`);
+    router.push(`/clans/${game.toLowerCase().replace(/\s+/g, '-')}-clans/${slug}`);
   } catch (error) {
     console.error('🔥 Error en handleVerify:', error);
     showNotification({

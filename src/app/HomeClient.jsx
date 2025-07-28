@@ -206,7 +206,7 @@ export default function HomeClient({ serverData }) {
           const categoria = row.categories?.[0] || 'otros';
           const basePath = isGroup
             ? `/comunidades/grupos-de-${row.tipo}/${slugify(categoria)}`
-            : `/clans/clans-de-${row.tipo}`;
+            : `/clans/${row.tipo}-clans`;
           router.push(`${basePath}/${slug}`);
         }}
         style={{ cursor: 'pointer' }}
@@ -503,7 +503,7 @@ export default function HomeClient({ serverData }) {
         <Button
           radius="md" 
           component={Link}
-          href="/clans/clans-de-clash-royale"
+          href="/clans/clash-royale-clans"
           variant="light"
           color="blue"
           size="lg"

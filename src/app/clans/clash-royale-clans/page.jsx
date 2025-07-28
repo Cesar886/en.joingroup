@@ -1,4 +1,3 @@
-// ✅ Archivo: /app/clans/clans-de-clash-royale/page.jsx
 
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '@/firebase/firebase';
@@ -14,7 +13,7 @@ export const metadata = {
     canonical: 'https://en.joingroups.pro/clans/clash-royale-clans',
     languages: {
       'en-US': 'https://en.joingroups.pro/clans/clash-royale-clans',
-      'es': 'https://joingroups.pro/clans/clans-de-clash-royale',
+      'es': 'https://joingroups.pro/clans/clash-royale-clans',
       'x-default': 'https://en.joingroups.pro/clans/clash-royale-clans',
     },
   },

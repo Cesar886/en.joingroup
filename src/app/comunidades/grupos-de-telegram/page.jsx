@@ -571,7 +571,7 @@ export default function Telegram() {
               <Button
                 radius="md" 
                 component={Link}
-                href="/clans/clans-de-clash-royale"
+                href="/clans/clash-royale-clans"
                 variant="light"
                 color="blue"
                 size="lg"
