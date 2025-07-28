@@ -152,7 +152,7 @@ export default function clans() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const snapshot = await getDocs(collection(db, 'clans'));
+      const snapshot = await getDocs(collection(db, 'clanes'));
       const groups = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
 
@@ -224,7 +224,7 @@ export default function clans() {
         shadow="xs"
         mb="sm"
         key={`${row.id}-${slug}-${idx}`}
-        onClick={() => router.push(`/clans/clans-de-${row.tipo}/${slug}`)}
+        onClick={() => router.push(`/clans/${row.tipo}-clans/${slug}`)}
       >
         <Table horizontalSpacing="md" withRowBorders={false}>
           <Table.Tbody>
@@ -339,7 +339,7 @@ export default function clans() {
                   "item": {
                     "@type": "Thing",
                     "name": "clans de Clash Royale",
-                    "url": "https://joingroups.pro/clans/clans-de-clash-royale",
+                    "url": "https://joingroups.pro/clans/clash-royale-clans",
                     "description": "Encuentra clans activos de Clash Royale para unirte o publicar el tuyo."
                   }
                 },
@@ -349,7 +349,7 @@ export default function clans() {
                   "item": {
                     "@type": "Thing",
                     "name": "clans de Clash of Clans",
-                    "url": "https://joingroups.pro/clans/clans-de-clash-of-clans",
+                    "url": "https://joingroups.pro/clans/clash-of-clans-clans",
                     "description": "Descubre los mejores clans de Clash of Clans para guerras y comunidad."
                   }
                 }
@@ -378,7 +378,7 @@ export default function clans() {
                     variant="light"
                     size="xs"
                     radius="md"
-                    onClick={() => router.push('/clans/clans-de-clash-royale')}
+                    onClick={() => router.push('/clans/clash-royale-clans')}
                     leftSection={
                       <img
                         src="/clashRoyaleFondo1.png"
@@ -394,7 +394,7 @@ export default function clans() {
                     variant="light"
                     size="xs"
                     radius="md"
-                    onClick={() => router.push('/clans/clans-de-clash-of-clans')}
+                    onClick={() => router.push('/clans/clash-of-clans-clans')}
                     leftSection={
                       <img
                         src="/clashOfClansFondo.png"

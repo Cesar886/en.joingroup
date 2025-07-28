@@ -53,14 +53,14 @@ export default function GroupDetailclans() {
         setNotFound(false);
 
         const q = query(
-          collection(db, 'clans'),
+          collection(db, 'clanes'),
           where('slug', '==', id),
           limit(1)
         );
         let snap = await getDocs(q);
 
         if (snap.empty) {
-          const allQ = query(collection(db, 'clans'), limit(1000));
+          const allQ = query(collection(db, 'clanes'), limit(1000));
           const allSnap = await getDocs(allQ);
           snap = allSnap.docs.filter(d => slugify(d.data().name) === id);
         } else {

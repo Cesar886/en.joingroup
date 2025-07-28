@@ -39,75 +39,11 @@ import '@/locales/i18n'; // Importa tus archivos de traducción
 const countries = [
   { value: 'es', label: 'México', emoji: '🇲🇽', lang: 'es' },
   { value: 'en', label: 'Estados Unidos', emoji: '🇺🇸', lang: 'en' },
-  { value: 'ar', label: 'Argentina', emoji: '🇦🇷', lang: 'es' },
-  { value: 'co', label: 'Colombia', emoji: '🇨🇴', lang: 'es' },
-  { value: 'es', label: 'España', emoji: '🇪🇸', lang: 'es' },
-  { value: 'pe', label: 'Perú', emoji: '🇵🇪', lang: 'es' },
-  { value: 'cl', label: 'Chile', emoji: '🇨🇱', lang: 'es' },
-  { value: 've', label: 'Venezuela', emoji: '🇻🇪', lang: 'es' },
-  { value: 'br', label: 'Brasil', emoji: '🇧🇷', lang: 'pt' },
-  { value: 'ec', label: 'Ecuador', emoji: '🇪🇨', lang: 'es' },
-  { value: 'gt', label: 'Guatemala', emoji: '🇬🇹', lang: 'es' },
-  { value: 'bo', label: 'Bolivia', emoji: '🇧🇴', lang: 'es' },
-  { value: 'do', label: 'República Dominicana', emoji: '🇩🇴', lang: 'es' },
-  { value: 'hn', label: 'Honduras', emoji: '🇭🇳', lang: 'es' },
-  { value: 'py', label: 'Paraguay', emoji: '🇵🇾', lang: 'es' },
-  { value: 'sv', label: 'El Salvador', emoji: '🇸🇻', lang: 'es' },
-  { value: 'ni', label: 'Nicaragua', emoji: '🇳🇮', lang: 'es' },
-  { value: 'cr', label: 'Costa Rica', emoji: '🇨🇷', lang: 'es' },
-  { value: 'pa', label: 'Panamá', emoji: '🇵🇦', lang: 'es' },
-  { value: 'uy', label: 'Uruguay', emoji: '🇺🇾', lang: 'es' },
-  { value: 'pr', label: 'Puerto Rico', emoji: '🇵🇷', lang: 'es' },
-  { value: 'ca', label: 'Canadá', emoji: '🇨🇦', lang: 'en' },
-  { value: 'de', label: 'Alemania', emoji: '🇩🇪', lang: 'de' },
-  { value: 'fr', label: 'Francia', emoji: '🇫🇷', lang: 'fr' },
-  { value: 'it', label: 'Italia', emoji: '🇮🇹', lang: 'it' },
-  { value: 'gb', label: 'Reino Unido', emoji: '🇬🇧', lang: 'en' },
-  { value: 'nl', label: 'Países Bajos', emoji: '🇳🇱', lang: 'nl' },
-  { value: 'pt', label: 'Portugal', emoji: '🇵🇹', lang: 'pt' },
-  { value: 'jp', label: 'Japón', emoji: '🇯🇵', lang: 'ja' },
-  { value: 'kr', label: 'Corea del Sur', emoji: '🇰🇷', lang: 'ko' },
-  { value: 'cn', label: 'China', emoji: '🇨🇳', lang: 'zh' },
-  { value: 'in', label: 'India', emoji: '🇮🇳', lang: 'hi' },
-  { value: 'ru', label: 'Rusia', emoji: '🇷🇺', lang: 'ru' },
-  { value: 'au', label: 'Australia', emoji: '🇦🇺', lang: 'en' },
 ];
 
 const countryMap = {
   mx: '🇲🇽',
   us: '🇺🇸',
-  ar: '🇦🇷',
-  co: '🇨🇴',
-  es: '🇪🇸',
-  pe: '🇵🇪',
-  cl: '🇨🇱',
-  ve: '🇻🇪',
-  br: '🇧🇷',
-  ec: '🇪🇨',
-  gt: '🇬🇹',
-  bo: '🇧🇴',
-  do: '🇩🇴',
-  hn: '🇭🇳',
-  py: '🇵🇾',
-  sv: '🇸🇻',
-  ni: '🇳🇮',
-  cr: '🇨🇷',
-  pa: '🇵🇦',
-  uy: '🇺🇾',
-  pr: '🇵🇷',
-  ca: '🇨🇦',
-  de: '🇩🇪',
-  fr: '🇫🇷',
-  it: '🇮🇹',
-  gb: '🇬🇧',
-  nl: '🇳🇱',
-  pt: '🇵🇹',
-  jp: '🇯🇵',
-  kr: '🇰🇷',
-  cn: '🇨🇳',
-  in: '🇮🇳',
-  ru: '🇷🇺',
-  au: '🇦🇺',
 };
 
 
@@ -148,7 +84,7 @@ export default function HomeClient({ serverData }) {
   const { t, i18n } = useTranslation();
   const router = useRouter();
   const [groups, setGroups] = useState([]);
-  const [clans, setclans] = useState([]);
+  const [clanes, setClanes] = useState([]);
   const [subdomain, setSubdomain] = useState('es'); // valor por defecto
   const baseLang = typeof i18n.language === 'string' ? i18n.language.split('-')[0] : 'es';
   const isMobile = useMediaQuery('(max-width: 768px)');
@@ -210,21 +146,21 @@ export default function HomeClient({ serverData }) {
       const whatsappGroups = [...destacadosWhatsapp, ...nuevosWhatsapp].slice(0, 5);
       setGroupsWhatsapp(whatsappGroups);
 
-      // ---------- clans ----------
-      const clansSnapshot = await getDocs(collection(db, 'clans'));
-      const allclans = clansSnapshot.docs.map(doc => ({
+      // ---------- CLANES ----------
+      const clanesSnapshot = await getDocs(collection(db, 'clanes'));
+      const allClanes = clanesSnapshot.docs.map(doc => ({
         id: doc.id,
         ...doc.data(),
       }));
 
-      const destacadosclans = allclans.filter(c => c.destacado === true);
-      const nuevosclans = allclans
+      const destacadosClanes = allClanes.filter(c => c.destacado === true);
+      const nuevosClanes = allClanes
         .filter(c => c.createdAt)
         .sort((a, b) => b.createdAt.toMillis() - a.createdAt.toMillis())
-        .filter(c => !destacadosclans.some(d => d.id === c.id))
-        .slice(0, 4 - destacadosclans.length);
+        .filter(c => !destacadosClanes.some(d => d.id === c.id))
+        .slice(0, 4 - destacadosClanes.length);
 
-      setclans([...destacadosclans, ...nuevosclans]);
+      setClanes([...destacadosClanes, ...nuevosClanes]);
     };
 
     fetchData();
@@ -450,7 +386,7 @@ export default function HomeClient({ serverData }) {
         <Paper mt="xl" withBorder shadow="sm" p="md" radius="lg">
           <Title order={2} mb="sm" fz={isMobile ? 20 : 26}>{isMobile ? '🏆 clans destacados' : '🏆 clans destacados y con más vistas'}</Title>
           <Stack>
-            {clans.map((clan, i) => renderCard(clan, i, false))}
+            {clanes.map((clan, i) => renderCard(clan, i, false))}
           </Stack>
           <Center mt="md">
             <Button variant="light" component={Link} radius="md" href="/clans" color='violet'>

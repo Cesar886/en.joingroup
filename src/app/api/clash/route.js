@@ -14,12 +14,12 @@ export async function GET(request) {
 
   const encodedTag = encodeURIComponent(tag);
   const endpoints = {
-    info: `/clans/${encodedTag}`,
-    members: `/clans/${encodedTag}/members`,
-    war: `/clans/${encodedTag}/currentwar`,
-    warlog: `/clans/${encodedTag}/warlog`,
-    riverrace: `/clans/${encodedTag}/currentriverrace`,
-    riverracelog: `/clans/${encodedTag}/riverracelog`,
+    info: `/clanes/${encodedTag}`,
+    members: `/clanes/${encodedTag}/members`,
+    war: `/clanes/${encodedTag}/currentwar`,
+    warlog: `/clanes/${encodedTag}/warlog`,
+    riverrace: `/clanes/${encodedTag}/currentriverrace`,
+    riverracelog: `/clanes/${encodedTag}/riverracelog`,
   };
 
   if (type !== 'full' && !endpoints[type]) {
