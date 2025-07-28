@@ -28,7 +28,7 @@ import { collection, getDocs } from 'firebase/firestore';
 import { db } from '@/firebase/firebase';
 import { useMediaQuery } from '@mantine/hooks';
 import slugify from '@/lib/slugify';
-import styles from '@/app/styles/TableSortClanes.module.css';
+import styles from '@/app/styles/TableSortClans.module.css';
 import Head from 'next/head';
 
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
