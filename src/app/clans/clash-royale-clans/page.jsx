@@ -112,6 +112,8 @@ export default async function ClashRoyalePage() {
   return (
     <>
       <Head>
+        <link rel="icon" href="/favicon.ico" />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
