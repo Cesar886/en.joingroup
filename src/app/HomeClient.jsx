@@ -508,7 +508,7 @@ export default function HomeClient({ serverData }) {
           color="blue"
           size="lg"
         >
-           Ver clans de Clash Royale
+           View all clans
         </Button>
 
         <Button

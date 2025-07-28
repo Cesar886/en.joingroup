@@ -163,7 +163,6 @@ export default function ClashRoyaleClient({ initialData }) {
       try {
         const response = await fetch(`${API_URL}/api/clash?tag=${tag}&type=full`);
         const result = await response.json();
-        console.log("🚀 ~ fetchClan ~ result:", result)
         setClan(result);
       } catch (error) {
         console.error('Error al obtener información del clan:', error);
