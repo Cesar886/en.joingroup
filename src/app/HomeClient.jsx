@@ -59,8 +59,8 @@ const featuredButtons = [
     icon: <IconTrendingUp size={18} />, color: 'orange',
   },
   {
-    to: '/clans/clans-de-clash-royale',
-    label: 'clans de Clash Royale',
+    to: '/clans/clash-royale-clans',
+    label: 'Clash Royale clans',
     icon: <IconCrown size={18} />, color: 'pink',
   },
   {
@@ -74,8 +74,8 @@ const featuredButtons = [
     icon: <IconNews size={18} />, color: 'cyan',
   },
   {
-    to: '/clans/clans-de-clash-of-clans',
-    label: 'clans Clash of Clans',
+    to: '/clans/clsh-of-clans-clans',
+    label: 'Clash of Clans clans',
     icon: <IconStar size={18} />, color: 'pink',
   },
 ];
@@ -283,7 +283,7 @@ export default function HomeClient({ serverData }) {
           >
             {isMobile
               ? 'Grupos de Telegram, WhatsApp y Juegos'
-              : 'Los mejores Grupos de Telegram, WhatsApp y clans de Juegos Activos'}
+              : 'The best Telegram, WhatsApp groups and active games'}
           </Title>
 
 
