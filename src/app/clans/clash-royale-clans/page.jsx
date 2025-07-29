@@ -21,7 +21,7 @@ export const metadata = {
     title: '⚔️ Active Clash Royale Clans 2025 | Find or Publish Yours',
     description: 'Discover active Clash Royale clans and find the perfect one for you. Clan leader? Publish your clan for free and recruit active players easily.',
     url: 'https://en.joingroups.pro/clans/clash-royale-clans',
-    siteName: 'JoinGroups.pro',
+    siteName: 'Clash Royale Clans',
     images: [
       {
         url: 'https://joingroups.pro/clashRoyaleFondo1.png',
