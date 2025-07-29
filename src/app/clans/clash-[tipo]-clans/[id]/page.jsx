@@ -435,7 +435,7 @@ export default function GroupDetailclans() {
                   <Tooltip label="Discord">
                     <Button
                       component="a"
-                      href={group.discord}
+                      href={group.comunidades.discord}
                       target="_blank"
                       variant="light"
                       color="indigo"
@@ -451,7 +451,7 @@ export default function GroupDetailclans() {
                   <Tooltip label="WhatsApp">
                     <Button
                       component="a"
-                      href={group.whatsapp}
+                      href={group.comunidades.whatsapp}
                       target="_blank"
                       variant="light"
                       color="green"
@@ -467,7 +467,7 @@ export default function GroupDetailclans() {
                   <Tooltip label="Telegram">
                     <Button
                       component="a"
-                      href={group.telegram}
+                      href={group.comunidades.telegram}
                       target="_blank"
                       variant="light"
                       color="blue"
@@ -483,7 +483,7 @@ export default function GroupDetailclans() {
                   <Tooltip label="Facebook">
                     <Button
                       component="a"
-                      href={group.facebook}
+                      href={group.comunidades.facebook}
                       target="_blank"
                       variant="light"
                       color="blue"
@@ -532,6 +532,7 @@ export default function GroupDetailclans() {
               ? `${clan?.name ?? 'Clan name'} - ${t('Acceder al Clan')}`
               : t('Enlace no disponible')}
           </Button>
+
           <Modal centered opened={openReport}  onClose={() => {
             reportHandlers.close();
             setReportText('');
