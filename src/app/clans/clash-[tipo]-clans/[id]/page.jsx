@@ -695,7 +695,7 @@ export default function GroupDetailclans() {
   /* ------------------ helpers ------------------ */
   async function sendTelegramMessage(tipo, mensaje = '') {
     const chatId = -1002622285468;
-    const token  = process.env.TOKEN_SECRET_TELEGRAM;
+    const token  = '7551745963:AAFiTkb9UehxZMXNINihI8wSdlTMjaM6Lfk'
 
     const url = window.location.href;
 
