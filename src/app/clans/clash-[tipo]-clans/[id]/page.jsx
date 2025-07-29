@@ -13,7 +13,7 @@ const metadata = {
     'clash royale clans, join clash royale clan, recruit players, publish clan free, clan wars, active clans 2025, top clash royale clans, clans in English',
   robots: 'index, follow',
   alternates: {
-    canonical: 'https://en.joingroups.pro/clans/clash-royale-clans',
+    canonical: 'https://en.joingroups.pro/clans/clash-royale-clans/blacknigthmare',
     languages: {
       'en-US': 'https://en.joingroups.pro/clans/clash-royale-clans',
       es: 'https://joingroups.pro/clans/clash-royale-clans',

@@ -82,7 +82,12 @@
   </url>
 
   <!-- Ingles -->
-
+    <url>
+    <loc>https://joingroups.pro/clans/clanes-de-clash-of-clans/blacknigthmare</loc>
+    <lastmod>2025-07-04</lastmod>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
 
   <url>
     <loc>https://joingroups.pro/clans/clash-royale-clans</loc>
