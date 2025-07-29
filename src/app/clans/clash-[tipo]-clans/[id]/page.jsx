@@ -177,7 +177,7 @@ export default function GroupDetailclans() {
   const baseLang = i18n.language.split('-')[0];
 
   /* -------------- render -------------- */
-  if (loading) return <Center><Text>{t('Cargando grupo...')}</Text></Center>;
+  if (loading) return <Center><Text>{t('Loading...')}</Text></Center>;
   if (notFound || !group)
     return <Center><Text>{t('Clan no encontrado')}</Text></Center>;
 
@@ -366,7 +366,7 @@ export default function GroupDetailclans() {
                 <Grid.Col span={{ base: 6, xs: 3 }}>
                   <Group gap="xs" align="center">
                     <Text fz="xs" c="gray.7">
-                      {t('Donaciones')}
+                      {t('Members')}
                     </Text>
                     <Badge className={classes.statBadge} variant="light" color="green">
                       <Group gap={rem(4)} align="center">
@@ -499,7 +499,7 @@ export default function GroupDetailclans() {
             </Box>
           )}
 
-          <Divider my="sm" />
+          <Divider/>
 
           {/* Botones */}
           <Group justify="space-between" mt="md">
@@ -695,7 +695,7 @@ export default function GroupDetailclans() {
   /* ------------------ helpers ------------------ */
   async function sendTelegramMessage(tipo, mensaje = '') {
     const chatId = -1002622285468;
-    const token  = "7551745963:AAFiTkb9UehxZMXNINihI8wSdlTMjaM6Lfk";
+    const token  = process.env.TOKEN_SECRET_TELEGRAM;
 
     const url = window.location.href;
 
