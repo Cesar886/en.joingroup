@@ -58,6 +58,10 @@ export default function clansGroupForm() {
     categories: '',
     content18: '',
     acceptTerms: false,
+    discord: '',
+    whatsapp: '',
+    telegram: '',
+    facebook: '',
   },
     validate: {
       email: (v) =>
@@ -214,10 +218,17 @@ const handleVerify = async (token) => {
       return;
     }
 
-
     const slug = slugify(clanName);
 
-    const { descriptionEs, descriptionEn, ...plainValues } = form.values;
+    const {
+      descriptionEs,
+      descriptionEn,
+      discord,
+      whatsapp,
+      telegram,
+      facebook,
+      ...plainValues
+    } = form.values;
 
     const inviteLink = rawLink; // 🔄 O reemplaza si tienes otro link final
 
@@ -231,6 +242,12 @@ const handleVerify = async (token) => {
       description: {
         es: descriptionEs.trim(),
         en: descriptionEn.trim(),
+      },
+      comunidades: {
+        discord: discord.trim(),
+        whatsapp: whatsapp.trim(),
+        telegram: telegram.trim(),
+        facebook: facebook.trim(),
       },
       destacado: false,
       visitas: 0,
@@ -292,9 +309,6 @@ const handleVerify = async (token) => {
   }
 };
 
-
-
-
   /* ───────────────────────── Render ──────────────────────────── */
   return (
     <>
@@ -325,7 +339,7 @@ const handleVerify = async (token) => {
             rel="noopener noreferrer"
             fullWidth
           >
-            {t('¿Quieres que agreguemos otro juego? Comunícate con nosotros')}
+            {t('¿Want us to add another game? Contact us.')}
           </Button>
         </Stack>
 
@@ -338,8 +352,8 @@ const handleVerify = async (token) => {
           <Stack>
             {/* Juego */}
             <Select
-              label="Juego"
-              placeholder="Selecciona un juego"
+              label="Game"
+              placeholder="Select a game"
               data={['Clash Royale', 'Clash of Clans']}
               value={game}
               onChange={setGame}
@@ -378,12 +392,12 @@ const handleVerify = async (token) => {
                   clashRoyaleClanRegex.test(
                     form.values.link.trim()
                   ) &&
-                  t('Enlace válido de clan (Clash Royale)')}
+                  t('Valid clan link (Clash Royale)')}
                 {game === 'Clash of Clans' &&
                   clashOfClansClanRegex.test(
                     form.values.link.trim()
                   ) &&
-                  t('Enlace válido de clan (Clash of Clans)')}
+                  t('Valid clan link (Clash of Clans)')}
                 {!(
                   (game === 'Clash Royale' &&
                     clashRoyaleClanRegex.test(
@@ -393,7 +407,7 @@ const handleVerify = async (token) => {
                     clashOfClansClanRegex.test(
                       form.values.link.trim()
                     ))
-                ) && t('Enlace no válido de clan')}
+                ) && t('Valid clan link')}
               </Text>
             )}
 
@@ -411,13 +425,13 @@ const handleVerify = async (token) => {
 
             {/* Email */}
             <TextInput
-              label={t('Tu e‑mail')}
+              label={t('e‑mail')}
               placeholder="email@email.com"
               required
               {...form.getInputProps('email')}
             />
             <TextInput
-              label={t('Repite tu e‑mail')}
+              label={t('Repeat your e‑mail')}
               required
               {...form.getInputProps('emailRepeat')}
             />
@@ -463,10 +477,35 @@ const handleVerify = async (token) => {
               error={form.errors.descriptionEn}
             />
 
+            <TextInput
+              label="Link Discord (optional )"
+              placeholder="https://discord.gg/..."
+              {...form.getInputProps('discord')}
+            />
+
+            <TextInput
+              label="Link WhatsApp (optional )"
+              placeholder="https://chat.whatsapp.com/..."
+              {...form.getInputProps('whatsapp')}
+            />
+
+            <TextInput
+              label="Link Telegram (optional )"
+              placeholder="https://t.me/..."
+              {...form.getInputProps('telegram')}
+            />
+
+            <TextInput
+              label="Link Facebook (optional )"
+              placeholder="https://facebook.com/groups/..."
+              {...form.getInputProps('facebook')}
+            />
+
+
             {/* Categorías */}
             <Select
-              label={t('Categorías')}
-              placeholder={t('Selecciona una categoría')}
+              label={t('Category')}
+              placeholder={t('Select a category')}
               {...form.getInputProps('categories')}
               data={[
                 'Competitivo',
@@ -480,7 +519,7 @@ const handleVerify = async (token) => {
             {/* Términos */}
             <Checkbox
               label={t(
-                'He leído y acepto las condiciones de uso y la privacidad'
+                'I have read and accept the terms of use and privacy'
               )}
               required
               {...form.getInputProps('acceptTerms', {

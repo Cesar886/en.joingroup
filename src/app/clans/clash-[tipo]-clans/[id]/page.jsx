@@ -11,14 +11,23 @@ import { useParams } from 'next/navigation';
 import {
   Box, Button, Center, Container, Divider,
   Group, Paper, Stack, Text, Title, Card, Badge, Image, SimpleGrid, rem, Grid,   Modal,
-  ScrollArea,
+  ScrollArea, Tooltip,
   Table, useMantineTheme, Avatar,
 } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
-import { useDisclosure } from '@mantine/hooks'; // Hook for modal state management
+import { useDisclosure } from '@mantine/hooks';
 import slugify from '@/lib/slugify';
 import { useTranslation } from 'react-i18next';
-import classes from '@/app/styles/DetailsClans.module.css'; // Your existing CSS module
+import classes from '@/app/styles/DetailsClans.module.css'; 
+import relativeTime from 'dayjs/plugin/relativeTime'; 
+import dayjs from 'dayjs'; 
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+import 'dayjs/locale/es';
+
+dayjs.extend(customParseFormat);
+dayjs.extend(relativeTime);
+dayjs.locale('en');
+
 
 // Import all the icons you'll use directly in this file
 import {
@@ -30,6 +39,7 @@ import {
   IconLink,
 } from '@tabler/icons-react';
 
+
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.gosukbdahdvsade.site';
 
 
@@ -40,8 +50,8 @@ export default function GroupDetailclans() {
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
   const [clan, setClan] = useState(null);
-  const [clanData, setClanData] = useState(null); // Can keep this if needed for other parts of 'result'
-  const [opened, { open, close }] = useDisclosure(false); // State for modal
+  const [clanData, setClanData] = useState(null); 
+  const [opened, { open, close }] = useDisclosure(false);
 
   const theme = useMantineTheme(); 
 
@@ -123,7 +133,7 @@ export default function GroupDetailclans() {
       try {
         const response = await fetch(`${API_URL}/api/clash?tag=${tag}&type=full`);
         const result = await response.json();
-        setClan(result.info); // Assuming result.info contains the detailed clan data
+        setClan(result.info);
         setClanData(result);
         setGlobalRank(result.globalRank ?? null);
         setLocalRank(result.localRank ?? null);
@@ -140,12 +150,10 @@ export default function GroupDetailclans() {
   const formatLastSeen = (isoDateString) => {
     if (!isoDateString) return 'N/A';
     try {
-      // The given format is 'YYYYMMDDTHHMMSS.000Z'
-      // Convert to a more standard ISO format for Date object
       const year = isoDateString.substring(0, 4);
       const month = isoDateString.substring(4, 6);
       const day = isoDateString.substring(6, 8);
-      const time = isoDateString.substring(9, 17); // HHMMSS
+      const time = isoDateString.substring(9, 17); 
 
       const formattedDateString = `${year}-${month}-${day}T${time.substring(0,2)}:${time.substring(2,4)}:${time.substring(4,6)}.000Z`;
 
@@ -154,7 +162,7 @@ export default function GroupDetailclans() {
         console.error("Invalid date string:", isoDateString);
         return 'Fecha Inválida';
       }
-      return date.toLocaleString(); // Adjust to your desired locale and format
+      return date.toLocaleString(); 
     } catch (error) {
       console.error("Error formatting date:", error);
       return 'Error de Fecha';
@@ -167,7 +175,15 @@ export default function GroupDetailclans() {
   /* -------------- render -------------- */
   if (loading) return <Center><Text>{t('Cargando grupo...')}</Text></Center>;
   if (notFound || !group)
-    return <Center><Text>{t('Grupo no encontrado.')}</Text></Center>;
+    return <Center><Text>{t('Clan no encontrado')}</Text></Center>;
+
+  const mostActiveMember = clan?.memberList
+  ?.filter(m => m.lastSeen)
+  ?.sort((a, b) => new Date(b.lastSeen) - new Date(a.lastSeen))[0];
+
+  const parsedDate = dayjs(mostActiveMember?.lastSeen, 'YYYYMMDDTHHmmss.SSS[Z]');
+
+
 
   return (
     <Container size="lg" px="sm" py="xl">
@@ -199,6 +215,22 @@ export default function GroupDetailclans() {
                     {group.visitas || 0} {t('visitas')}
                   </strong>
                 </Text>
+
+                <Text size="sm" c="dimmed">
+                  Clan Leader:{' '}
+                  <strong>
+                    {clan?.memberList?.find(m => m.role === 'leader')?.name ?? '—'}
+                  </strong>
+                </Text>
+
+                <Text size="sm" c="dimmed">
+                  Most active:{' '}
+                  <strong>{mostActiveMember?.name ?? '—'}</strong>{' '}
+                  {parsedDate.isValid() && `(last connection: ${parsedDate.fromNow()})`}
+                </Text>
+
+
+
               </div>
             </Group>
           )}
@@ -301,7 +333,7 @@ export default function GroupDetailclans() {
             </Group>
           </Stack>
 
-          <Divider my="md" />
+          <Divider/>
 
           {/* Estadísticas Clave (as badges) */}
           {clan && (
@@ -339,6 +371,21 @@ export default function GroupDetailclans() {
                         <IconGift size={14} stroke={1.5} />
                         <Text fz="xs" fw={700}>
                           {clan?.donationsPerWeek ?? '—'}
+                        </Text>
+                      </Group>
+                    </Badge>
+                  </Group>
+                </Grid.Col>
+
+                <Grid.Col span={{ base: 6, xs: 3 }}>
+                  <Group gap="xs" align="center">
+                    <Text fz="xs" c="gray.7">
+                      {t('Donaciones')}
+                    </Text>
+                    <Badge className={classes.statBadge} variant="light" color="green">
+                      <Group gap={rem(4)} align="center">
+                        <Text fz="xs" fw={700}>
+                          {clan?.members ?? '—'}/50
                         </Text>
                       </Group>
                     </Badge>
@@ -392,12 +439,77 @@ export default function GroupDetailclans() {
 
 
               </Grid>
-              <Text fz="xs" c="dimmed" mt="md">
-                Grupo de Discord
-              </Text>
-              <Button>
 
-              </Button>
+              <Text fz="xs" c="dimmed" mt="md">
+                {t('Comunidades del Clan')}
+              </Text>
+
+              <Group mt="xs" spacing="sm">
+                {group?.discord && (
+                  <Tooltip label="Discord">
+                    <Button
+                      component="a"
+                      href={group.discord}
+                      target="_blank"
+                      variant="light"
+                      color="indigo"
+                      size="xs"
+                      leftSection={<IconBrandDiscord size={16} />}
+                    >
+                      Discord
+                    </Button>
+                  </Tooltip>
+                )}
+
+                {group?.whatsapp && (
+                  <Tooltip label="WhatsApp">
+                    <Button
+                      component="a"
+                      href={group.whatsapp}
+                      target="_blank"
+                      variant="light"
+                      color="green"
+                      size="xs"
+                      leftSection={<IconBrandWhatsapp size={16} />}
+                    >
+                      WhatsApp
+                    </Button>
+                  </Tooltip>
+                )}
+
+                {group?.telegram && (
+                  <Tooltip label="Telegram">
+                    <Button
+                      component="a"
+                      href={group.telegram}
+                      target="_blank"
+                      variant="light"
+                      color="blue"
+                      size="xs"
+                      leftSection={<IconBrandTelegram size={16} />}
+                    >
+                      Telegram
+                    </Button>
+                  </Tooltip>
+                )}
+
+                {group?.facebook && (
+                  <Tooltip label="Facebook">
+                    <Button
+                      component="a"
+                      href={group.facebook}
+                      target="_blank"
+                      variant="light"
+                      color="blue"
+                      size="xs"
+                      leftSection={<IconBrandFacebook size={16} />}
+                    >
+                      Facebook
+                    </Button>
+                  </Tooltip>
+                )}
+              </Group>
+
             </Box>
           )}
 
@@ -470,12 +582,12 @@ export default function GroupDetailclans() {
             >
               <Table.Thead>
                 <Table.Tr>
-                  <Table.Th>Miembro</Table.Th>
+                  <Table.Th>Member</Table.Th>
                   <Table.Th>Rol</Table.Th>
-                  <Table.Th>Nivel</Table.Th>
-                  <Table.Th>Trofeos</Table.Th>
-                  <Table.Th>Donaciones</Table.Th>
-                  <Table.Th>Última Conexión</Table.Th>
+                  <Table.Th>Level</Table.Th>
+                  <Table.Th>Trophies</Table.Th>
+                  <Table.Th>Donations</Table.Th>
+                  <Table.Th>Last Connection</Table.Th>
                 </Table.Tr>
               </Table.Thead>
               <Table.Tbody>
@@ -526,7 +638,7 @@ export default function GroupDetailclans() {
               </Table.Tbody>
             </Table>
           ) : (
-            <Text>No hay miembros disponibles en este clan.</Text>
+            <Text>There are no members available in this clan</Text>
           )}
         </ScrollArea>
       </Modal>

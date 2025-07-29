@@ -38,7 +38,6 @@ export default function Form() {
     { value: 'en', label: 'Estados Unidos' },
     { value: 'ar', label: 'Argentina' },
     { value: 'co', label: 'Colombia' },
-    { value: 'es', label: 'España' },
     { value: 'pe', label: 'Perú' },
     { value: 'cl', label: 'Chile' },
     { value: 've', label: 'Venezuela' },

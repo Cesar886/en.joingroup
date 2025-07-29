@@ -422,7 +422,7 @@ export default function HomeClient({ serverData }) {
           </Stack>
           <Center mt="md">
             <Button variant="light" component={Link} radius="md" href="/clans" color='violet'>
-              Ver todos los clans
+              See all clans
             </Button>
           </Center>
         </Paper>
