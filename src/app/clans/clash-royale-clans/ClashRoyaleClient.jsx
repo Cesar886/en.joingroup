@@ -352,9 +352,9 @@ export default function ClashRoyaleClient({ initialData }) {
                 </>
               ) : (
                 <>
-                  <Title order={3} mb="xs">
+                  <h1 order={3} mb="xs">
                     {t('Clash Royale Clans ⚔️ | Join, Search, or Recruit Players')}
-                  </Title>
+                  </h1>
                   <Text size="sm" color="dimmed" mb="xs">
                     {t('desktop1')} <strong>{t('desktop2')}</strong>? {t('desktop3')}{' '}
                     <a
@@ -549,9 +549,9 @@ export default function ClashRoyaleClient({ initialData }) {
                 p="md"
                 style={{ backgroundColor: '#f9f9f9', marginBottom: '20px', paddingBottom: '10px' }}
               >
-              <Text size="md" fw={600} mb="sm">
+              <h2 size="md" fw={600} mb="sm">
                 {t('clashRoyale.intro')} <a href="https://www.joingroups.pro/clans/clash-royale-clans" target="_blank" rel="noopener noreferrer" style={{ color: '#228be6', textDecoration: 'underline' }}>JoinGroups</a>!
-              </Text>
+              </h2>
 
               <Text size="sm" color="dimmed" mb="xs">
                 {t('clashRoyale.faq1')} <br />
