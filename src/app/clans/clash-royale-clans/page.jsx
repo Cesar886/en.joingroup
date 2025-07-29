@@ -5,7 +5,7 @@ import ClashRoyaleClient from './ClashRoyaleClient';
 import Head from 'next/head'; // Asegúrate de importar esto si no usas app router con metadata export
 
 export const metadata = {
-  title: 'Clash Royale Clans 2025 ⚔️ | Join, Search, or Recruit Players',
+  title: 'Clash Royale Clans ⚔️ | Join, Search, or Recruit Players',
   description: 'Discover the best Clash Royale clans of 2025. Filter by cup, join the most active, or list your clan for free to recruit players.',
   keywords: 'clash royale clans, join clash royale clan, recruit players, publish clan free, clan wars, active clans 2025, top clash royale clans, clans in English',
   robots: 'index, follow',
