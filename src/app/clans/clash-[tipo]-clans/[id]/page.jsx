@@ -229,8 +229,6 @@ export default function GroupDetailclans() {
                   {parsedDate.isValid() && `(last connection: ${parsedDate.fromNow()})`}
                 </Text>
 
-
-
               </div>
             </Group>
           )}
