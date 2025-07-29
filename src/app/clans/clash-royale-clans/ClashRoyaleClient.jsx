@@ -353,7 +353,7 @@ export default function ClashRoyaleClient({ initialData }) {
               ) : (
                 <>
                   <Title order={3} mb="xs">
-                    {t('desktopTitle')}
+                    {t('Clash Royale Clans ⚔️ | Join, Search, or Recruit Players')}
                   </Title>
                   <Text size="sm" color="dimmed" mb="xs">
                     {t('desktop1')} <strong>{t('desktop2')}</strong>? {t('desktop3')}{' '}
