@@ -13,7 +13,7 @@ export async function generateMetadata({ params }) {
   const { slug } = resolvedParams;
 
   const post = blogs.find((p) => p.slug === slug);
-  if (!post) return { title: 'Blog no encontrado', description: 'Este artículo no existe.' };
+  if (!post) return { title: 'Blog not found', description: 'This article does not exist.' };
 
   return {
     title: post.title,
