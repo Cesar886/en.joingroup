@@ -6,7 +6,7 @@ import Head from 'next/head'; // Asegúrate de importar esto si no usas app rout
 
 export const metadata = {
   title: 'Clash Royale Clans ⚔️ | Join, Search, or Recruit Players',
-  description: 'Discover the best Clash Royale clans. Filter by cup, join the most active, or list your clan for free to recruit players.',
+  description: 'Find the best Clash Royale clans to join or recruit. Use filters to sort by trophies, region, language, or clan activity. Discover new teams, connect with active players, or list your own clan for free to start recruiting today.',
   keywords: 'clash royale clans, join clash royale clan, recruit players, publish clan free, clan wars, active clans 2025, top clash royale clans, clans in English',
   robots: 'index, follow',
   alternates: {
