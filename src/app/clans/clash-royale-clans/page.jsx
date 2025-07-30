@@ -6,7 +6,7 @@ import Head from 'next/head'; // Asegúrate de importar esto si no usas app rout
 
 export const metadata = {
   title: 'Clash Royale Clans ⚔️ | Join, Search, or Recruit Players',
-  description: 'Discover the best Clash Royale clans of 2025. Filter by cup, join the most active, or list your clan for free to recruit players.',
+  description: 'Discover the best Clash Royale clans. Filter by cup, join the most active, or list your clan for free to recruit players.',
   keywords: 'clash royale clans, join clash royale clan, recruit players, publish clan free, clan wars, active clans 2025, top clash royale clans, clans in English',
   robots: 'index, follow',
   alternates: {
@@ -18,8 +18,8 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: '⚔️ Active Clash Royale Clans 2025 | Find or Publish Yours',
-    description: 'Discover active Clash Royale clans and find the perfect one for you. Clan leader? Publish your clan for free and recruit active players easily.',
+    title: '⚔️ Clash Royale Clans | Find or Publish Yours',
+    description: 'Discover Clash Royale clans and find the perfect one for you. Clan leader? Publish your clan for free and recruit active players easily.',
     url: 'https://en.joingroups.pro/clans/clash-royale-clans',
     siteName: 'Clash Royale Clans',
     images: [
@@ -34,8 +34,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Active Clash Royale Clans in 2025 | Publish or Join for Free',
-    description: 'Browse active Clash Royale clans or list your own for free. Perfect for players and leaders looking to grow in clan wars.',
+    title: 'Clash Royale Clans | Publish or Join for Free',
+    description: 'Browse Clash Royale clans or list your own for free. Perfect for players and leaders looking to grow in clan wars.',
     images: ['https://joingroups.pro/clashRoyaleFondo1.png'],
   },
 };

@@ -331,7 +331,7 @@ export default function ClashRoyaleClient({ initialData }) {
               {isMobile ? (
                 <>
                   <Title order={4} mb="xs">
-                    {t('mobileTitle')}
+                    {t('Clash Royale Clans')}
                   </Title>
                   <Text size="sm" color="dimmed" mb="xs">
                     {t('mobile1')} <strong>{t('mobile2')}</strong>? {t('mobile3')}{' '}
