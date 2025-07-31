@@ -5,9 +5,9 @@ import ClashRoyaleClient from './ClashRoyaleClient';
 import Head from 'next/head'; // Asegúrate de importar esto si no usas app router con metadata export
 
 export const metadata = {
-  title: 'Clash Royale Clans ⚔️ | Join, Search, or Recruit Players',
-  description: 'Find the best Clash Royale clans to join or recruit. Use filters to sort by trophies, region, language, or clan activity. Discover new teams, connect with active players, or list your own clan for free to start recruiting today.',
-  keywords: 'clash royale clans, join clash royale clan, recruit players, publish clan free, clan wars, active clans 2025, top clash royale clans, clans in English',
+  title: 'Clash Royale Clans ⚔️ | Join, Recruit or Publish Your Clan FREE',
+  description: 'Find the best Clash Royale clans to join or recruit active players. Use filters to sort by trophies, region, language, or activity. Discover new teams, connect with active players, or list your clan for free to start recruiting today.',
+  keywords: 'clash royale clans, join clash royale clan, recruit clash royale players, publish clan free, active clash royale clans, best clash royale clans, clan wars, clash royale clan search',
   robots: 'index, follow',
   alternates: {
     canonical: 'https://en.joingroups.pro/clans/clash-royale-clans',
@@ -41,6 +41,7 @@ export const metadata = {
 };
 
 
+
 export default async function ClashRoyalePage() {
   const snapshot = await getDocs(collection(db, 'clanes'));
   const groups = snapshot.docs.map(doc => {
@@ -67,7 +68,7 @@ export default async function ClashRoyalePage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Active Clash Royale Clans 2025',
+    name: 'Clash Royale Clans | Join, Recruit or Publish Your Clan FREE',
     description: metadata.description,
     url: 'https://en.joingroups.pro/clans/clash-royale-clans',
     breadcrumb: {
@@ -106,6 +107,36 @@ export default async function ClashRoyalePage() {
         url: 'https://joingroups.pro/icon-512.png',
       },
     },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://en.joingroups.pro/search?q={search_term_string}'
+      },
+      'query-input': 'required name=search_term_string'
+    },
+    significantLink: [
+      {
+        '@type': 'WebPage',
+        name: 'Join a Clash Royale Clan',
+        url: 'https://en.joingroups.pro/clans/clash-royale-clans?action=join'
+      },
+      {
+        '@type': 'WebPage',
+        name: 'Recruit Clash Royale Players',
+        url: 'https://en.joingroups.pro/clans/clash-royale-clans?action=recruit'
+      },
+      {
+        '@type': 'WebPage',
+        name: 'Publish Your Clan for Free',
+        url: 'https://en.joingroups.pro/clans/clash-royale-clans?action=publish'
+      },
+      {
+        '@type': 'WebPage',
+        name: 'Active Clash Royale Clans',
+        url: 'https://en.joingroups.pro/clans/clash-royale-clans?filter=active'
+      }
+    ]
   };
 
 

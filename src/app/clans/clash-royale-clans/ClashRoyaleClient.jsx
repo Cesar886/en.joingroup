@@ -353,7 +353,7 @@ export default function ClashRoyaleClient({ initialData }) {
               ) : (
                 <>
                   <h1 order={3} mb="xs">
-                    {t('Clash Royale Clans ⚔️ | Join, Search, or Recruit Players')}
+                    {t('Clash Royale Clans – Join, Search or Recruit Active Members')}
                   </h1>
                   <Text size="sm" color="dimmed" mb="xs">
                     {t('desktop1')} <strong>{t('desktop2')}</strong>? {t('desktop3')}{' '}
@@ -366,8 +366,8 @@ export default function ClashRoyaleClient({ initialData }) {
                       JoinGroups
                     </a>{' '}
                     {t('desktop4')} <br />
-                    {t('desktop5')} <strong>{t('desktop6')}</strong>, {t('desktop7')}, o incluso{' '}
-                    <strong>{t('desktop8')}</strong> {t('desktop9')} <br />
+                    {t('desktop5')} <strong>{t('desktop6')}</strong>, {t('desktop7')},{' '}
+                    <strong>{t('Publish Your Own Clash Royale Clan')}</strong> {t('desktop9')} <br />
                     {t('desktop10')} <strong>{t('desktop11')}</strong>{' '}
                     <strong>{t('desktop12')}</strong> <br />
                     {t('desktop13')} <strong>{t('desktop14')}</strong>, <strong>{t('desktop15')}</strong> y{' '}
