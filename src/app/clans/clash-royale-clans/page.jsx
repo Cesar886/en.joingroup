@@ -18,7 +18,7 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: '⚔️ Clash Royale Clans | Find or Publish Yours',
+    title: '⚔️ Clash Royale Clans | Recruit or Publish Your Clan',
     description: 'Discover Clash Royale clans and find the perfect one for you. Clan leader? Publish your clan for free and recruit active players easily.',
     url: 'https://en.joingroups.pro/clans/clash-royale-clans',
     siteName: 'Clash Royale Clans',
