@@ -201,7 +201,7 @@ export default function GroupDetailclans() {
           style={{
             backgroundColor: '#0A1828',
             backgroundImage: 'url("/escudo.png")',
-            backgroundSize: '70% 95%',        // ajusta al tamaño que prefieras
+            backgroundSize: '65% 95%',        // ajusta al tamaño que prefieras
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',     // o 'top center'
             borderRadius: '1.5rem',
@@ -222,9 +222,18 @@ export default function GroupDetailclans() {
             }}
           >
             {/* Aquí va todo tu contenido: título, descripción, badges, etc. */}
-          <Text fw={700} fz="2rem" c="#efb810" lh={1}>
-            {clan?.name ?? 'Nombre del Clan'}
-          </Text>
+<Text
+  fw={700}
+  fz="2rem"
+  lh={1}
+  className={classes.goldEffect}
+  data-text={clan?.name ?? 'BLACK NIGHTMARE'}
+>
+  {clan?.name ?? 'BLACK NIGHTMARE'}
+</Text>
+
+
+
           <Text mt="xs" c="#E9F1FA" fz="md">
             {clan?.location?.name} ({clan?.location?.countryCode})
           </Text>
@@ -324,7 +333,13 @@ export default function GroupDetailclans() {
                       <Text fz="xs" c="gray.7">
                         Clan Score
                       </Text>
-                      <Badge className={classes.statBadge} variant="light" color="blue">
+                        <Badge
+                          style={{
+                          backgroundColor: '#EAF4FF',  // azul muy claro
+                          color: '#002C58',            // texto
+                          fontWeight: 700
+                        }}
+                        >
                         <Group gap={rem(4)} align="center">
                           <IconTrophy size={14} stroke={1.5} />
                           <Text fz="xs" fw={700}>
@@ -366,7 +381,13 @@ export default function GroupDetailclans() {
                         <Text fz="xs" c="gray.7">
                           Ranking Global
                         </Text>
-                        <Badge className={classes.statBadge} variant="light" color="blue">
+                        <Badge
+                          style={{
+                          backgroundColor: '#efb810',  // azul muy claro
+                          color: '#002C58',            // texto
+                          fontWeight: 700
+                        }}
+                        >
                           <Text fz="xs" fw={800}>#{globalRank}</Text>
                         </Badge>
                       </Group>
@@ -380,8 +401,14 @@ export default function GroupDetailclans() {
                         <Text fz="xs" c="gray.7">
                           Ranking Local
                         </Text>
-                        <Badge className={classes.statBadge} variant="light" color="blue">
-                          <Text fz="xs" fw={800}>#{localRank}</Text>
+                        <Badge className={classes.goldEffect}
+                        style={{
+                          backgroundColor: '#EAF4FF',  // azul muy claro
+                          // color: '#002C58',            // texto
+                          fontWeight: 700
+                        }}
+                        >
+                         <Text fz="xs" fw={800}># {localRank}</Text>
                         </Badge>
                       </Group>
                     </Grid.Col>
