@@ -137,6 +137,7 @@ export default function GroupDetailclans() {
       try {
         const response = await fetch(`${API_URL}/api/clash?tag=${tag}&type=full`);
         const result = await response.json();
+        console.log("🚀 ~ fetchClan ~ result:", result)
         setClan(result.info);
         setClanData(result);
         setGlobalRank(result.globalRank ?? null);
@@ -198,7 +199,7 @@ export default function GroupDetailclans() {
           padding={0}
           shadow="none"
           style={{
-            backgroundColor: '#17609B',
+            backgroundColor: '#0A1828',
             backgroundImage: 'url("/escudo.png")',
             backgroundSize: '70% 95%',        // ajusta al tamaño que prefieras
             backgroundRepeat: 'no-repeat',
@@ -221,10 +222,10 @@ export default function GroupDetailclans() {
             }}
           >
             {/* Aquí va todo tu contenido: título, descripción, badges, etc. */}
-          <Text fw={700} fz="2rem" c="#FFFFFF" lh={1}>
+          <Text fw={700} fz="2rem" c="#efb810" lh={1}>
             {clan?.name ?? 'Nombre del Clan'}
           </Text>
-          <Text mt="xs" c="#CFFF94" fz="md">
+          <Text mt="xs" c="#E9F1FA" fz="md">
             {clan?.location?.name} ({clan?.location?.countryCode})
           </Text>
           <Text mt="xs" c="#FFFFFF" fz="sm" style={{ opacity: 0.8 }}>
@@ -238,7 +239,7 @@ export default function GroupDetailclans() {
           padding="xl"
           shadow="md"
           className={classes.card}
-          style={{ backgroundColor: '#C3DFFF' }}
+          style={{ backgroundColor: '#E9F1FA' }}
         >
           <Stack >
             { clan?.description && (
