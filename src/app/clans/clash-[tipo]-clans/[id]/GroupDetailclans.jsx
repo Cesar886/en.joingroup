@@ -137,7 +137,6 @@ export default function GroupDetailclans() {
       try {
         const response = await fetch(`${API_URL}/api/clash?tag=${tag}&type=full`);
         const result = await response.json();
-        console.log("🚀 ~ fetchClan ~ result:", result)
         setClan(result.info);
         setClanData(result);
         setGlobalRank(result.globalRank ?? null);
@@ -222,17 +221,15 @@ export default function GroupDetailclans() {
             }}
           >
             {/* Aquí va todo tu contenido: título, descripción, badges, etc. */}
-<Text
-  fw={700}
-  fz="2rem"
-  lh={1}
-  className={classes.goldEffect}
-  data-text={clan?.name ?? 'BLACK NIGHTMARE'}
->
-  {clan?.name ?? 'BLACK NIGHTMARE'}
-</Text>
-
-
+          <Text
+            fw={700}
+            fz="2rem"
+            lh={1}
+            className={classes.goldEffect}
+            data-text={clan?.name ?? 'BLACK NIGHTMARE'}
+          >
+            {clan?.name ?? 'BLACK NIGHTMARE'}
+          </Text>
 
           <Text mt="xs" c="#E9F1FA" fz="md">
             {clan?.location?.name} ({clan?.location?.countryCode})
